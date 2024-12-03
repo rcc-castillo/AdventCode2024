@@ -24,16 +24,16 @@ public class HistorianHysteria {
         List<Integer> listTeam2 = getTeamList(input, 1);
 
 
-        List<Integer> orederedListTeam1 = listTeam1.stream().sorted().toList();
-        List<Integer> orederedListTeam2 = listTeam2.stream().sorted().toList();
+        List<Integer> orderedListTeam1 = listTeam1.stream().sorted().toList();
+        List<Integer> orderedListTeam2 = listTeam2.stream().sorted().toList();
         System.out.println(listTeam1);
         System.out.println(listTeam2);
 
-        int distance = getDistance(orederedListTeam1, orederedListTeam2);
+        int distance = getDistance(orderedListTeam1, orderedListTeam2);
         System.out.printf("Distance requiered in part 1: %d%n", distance);
 
-        int similitaryScore = getSimilitaryScore(listTeam1, listTeam2);
-        System.out.printf("Similarity score requiered in part 2: %d%n", similitaryScore);
+        int similarityScore = getSimilarityScore(listTeam1, listTeam2);
+        System.out.printf("Similarity score requiered in part 2: %d%n", similarityScore);
     }
 
     public static List<String> readInput(String filePath) throws IOException {
@@ -55,7 +55,7 @@ public class HistorianHysteria {
         return distance;
     }
 
-    private static int getSimilitaryScore(List<Integer> listTeam1, List<Integer> listTeam2) {
+    private static int getSimilarityScore(List<Integer> listTeam1, List<Integer> listTeam2) {
         return listTeam1.stream()
                 .mapToInt(id -> id * (int) listTeam2.stream().filter(id::equals).count())
                 .sum();
