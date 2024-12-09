@@ -26,7 +26,7 @@ public class CeresSearch {
                 .toArray(char[][]::new);
 
         int result = countXMAS(matrix);
-        System.out.printf("Total XMAS required in part 1: %d%n%n", result);
+        System.out.printf("Total XMAS required in part 1: %d%n", result);
 
         int xmasPatternCount = countXMASPattern(matrix);
         System.out.printf("Total X-MAS patterns required in part 2: %d%n", xmasPatternCount);
